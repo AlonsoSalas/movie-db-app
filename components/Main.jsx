@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { View, FlatList, ActivityIndicator } from "react-native";
 import { fetchMovies } from "../lib/theMovieDb";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { MovieCard, AnimatedMovieCard } from "./MovieCard";
-import { Logo } from "./Logo";
+import { MovieCard } from "./MovieCard";
+import { Screen } from "./Screen";
 
 export function Main() {
   const [movies, setMovies] = useState([]);
-  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     fetchMovies().then((movies) => {
@@ -16,8 +15,7 @@ export function Main() {
   }, []);
 
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      {/* navbar */}
+    <Screen>
       {movies.length === 0 ? (
         <ActivityIndicator color={"#fff"} size={"large"} />
       ) : (
@@ -28,6 +26,6 @@ export function Main() {
           renderItem={({ item }) => <MovieCard movie={item} />}
         />
       )}
-    </View>
+    </Screen>
   );
 }

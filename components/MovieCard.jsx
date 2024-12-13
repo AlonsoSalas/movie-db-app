@@ -1,24 +1,22 @@
-import { View, StyleSheet, Image } from "react-native";
+import { Link } from "expo-router";
+import { styled } from "nativewind";
+import { View, StyleSheet, Image, Pressable } from "react-native";
+import { constructPosterUrl } from "../lib/theMovieDb";
 
-/**
- * Constructs the complete URI for a movie poster.
- * @param {string} posterPath - The relative poster path returned by the API.
- * @param {string} size - The desired image size (e.g., "w185", "original"). Defaults to "w185".
- * @returns {string} The complete URL for the movie poster.
- */
-function constructPosterUrl(posterPath, size = "w185") {
-  const BASE_URL = "https://image.tmdb.org/t/p/";
-  return `${BASE_URL}${size}${posterPath}`;
-}
+const StyledPressable = styled(Pressable);
 
 export function MovieCard({ movie }) {
   return (
-    <View style={styles.card}>
-      <Image
-        source={{ uri: constructPosterUrl(movie.poster_path) }}
-        style={styles.image}
-      />
-    </View>
+    <Link href={`/${movie.id}`} asChild>
+      <StyledPressable className="flex-1 active:opacity-50  active:border-white/50">
+        <View className="flex-row" style={styles.card}>
+          <Image
+            source={{ uri: constructPosterUrl(movie.poster_path) }}
+            style={styles.image}
+          />
+        </View>
+      </StyledPressable>
+    </Link>
   );
 }
 
