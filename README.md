@@ -19,7 +19,7 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/project-name.git
+   git clone https://github.com/AlonsoSalas/movie-db-app.git
 
    ```
 
