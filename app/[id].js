@@ -9,7 +9,7 @@ import {
   Pressable,
 } from "react-native";
 import { useEffect, useState } from "react";
-import { constructPosterUrl, fetchMovieDetails } from "../lib/theMovieDb";
+import { constructPosterUrl, fetchMovieDetails } from "../lib/movieDbService";
 import { styled } from "nativewind";
 
 const StyledPressable = styled(Pressable);

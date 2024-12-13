@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { View, FlatList, ActivityIndicator } from "react-native";
-import { fetchMovies } from "../lib/theMovieDb";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { FlatList, ActivityIndicator } from "react-native";
+import { fetchMovies } from "../lib/movieDbService";
 import { MovieCard } from "./MovieCard";
 import { Screen } from "./Screen";
 import uniqBy from "lodash/uniqBy";

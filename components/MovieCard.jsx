@@ -1,7 +1,7 @@
 import { Link } from "expo-router";
 import { styled } from "nativewind";
 import { View, StyleSheet, Image, Pressable } from "react-native";
-import { constructPosterUrl } from "../lib/theMovieDb";
+import { constructPosterUrl } from "../lib/movieDbService";
 
 const StyledPressable = styled(Pressable);
 
