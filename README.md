@@ -26,7 +26,7 @@ Make sure you have the following installed:
 2. Navigate to the project directory:
 
    ```bash
-   cd project-name
+   cd movie-db-app
    ```
 
 3. Install the dependencies:
